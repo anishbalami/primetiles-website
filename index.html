@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium quality tiles manufacturer - Explore our extensive range of ceramic, porcelain, and decorative tiles">
+    <meta name="keywords" content="tiles, ceramic tiles, porcelain tiles, tile manufacturer, flooring">
+    <title>Prime Tiles Industries - Premium Tile Manufacturing</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --secondary-color: #34495e;
+            --text-light: #ecf0f1;
+            --text-dark: #2c3e50;
+            --bg-light: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Page Sections */
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 80px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(44,62,80,0.9), rgba(52,73,94,0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="tiles" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><rect width="48" height="48" x="1" y="1" fill="%23bdc3c7"/><rect width="48" height="48" x="51" y="1" fill="%2395a5a6"/><rect width="48" height="48" x="1" y="51" fill="%2395a5a6"/><rect width="48" height="48" x="51" y="51" fill="%23bdc3c7"/></pattern></defs><rect width="1200" height="600" fill="url(%23tiles)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            animation: slideUp 1s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 15px rgba(192,57,43,0.3);
+        }
+
+        .cta-button:hover {
+            background: #a93226;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(192,57,43,0.4);
+        }
+
+        /* Company Intro */
+        .intro-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .intro-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .intro-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .intro-card .icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .intro-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* About Page */
+        .about-content {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .about-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .about-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .about-box h2 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .timeline-item {
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-left: 3px solid var(--accent-color);
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '●';
+            position: absolute;
+            left: -9px;
+            top: 1.5rem;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        /* Products/Catalogues Page */
+        .catalogues-section {
+            padding: 3rem 2rem;
+            background: var(--bg-light);
+            min-height: calc(100vh - 80px);
+        }
+
+        .catalogues-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .catalogues-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .catalogues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .catalogue-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .catalogue-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .catalogue-thumbnail {
+            height: 350px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .catalogue-thumbnail::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.05) 10px,
+                rgba(255,255,255,0.05) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .catalogue-info {
+            padding: 1.5rem;
+        }
+
+        .catalogue-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .catalogue-description {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .catalogue-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-view, .btn-download {
+            flex: 1;
+            padding: 0.7rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-view {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-view:hover {
+            background: var(--secondary-color);
+        }
+
+        .btn-download {
+            background: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn-download:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* PDF Viewer Modal */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .pdf-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pdf-modal-content {
+            width: 90%;
+            height: 90%;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+
+        .pdf-modal-header {
+            padding: 1rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .close-modal {
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+
+        .pdf-viewer {
+            flex: 1;
+            padding: 1rem;
+            overflow: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f0f0;
+        }
+
+        /* Contact Page */
+        .contact-section {
+            padding: 3rem 2rem;
+            background: var(--bg-light);
+            min-height: calc(100vh - 80px);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #a93226;
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .info-item .icon {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            width: 30px;
+        }
+
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+                padding: 2rem 0;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .catalogues-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 500px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+
+            .catalogues-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: #27ae60;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            text-align: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo"><image src="../prime-website/prime-logo.jpg" alt="Prime Tiles Logo" width="150"></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" data-page="home" class="nav-link active">Home</a></li>
+                <li><a href="#" data-page="about" class="nav-link">About Us</a></li>
+                <li><a href="#" data-page="products" class="nav-link">Products</a></li>
+                <li><a href="#" data-page="contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Prime Tiles with Stile</h1>
+                <p class="tagline">Transforming spaces with premium quality tiles since 2023</p>
+                <button class="cta-button" onclick="navigateToPage('products')">Explore Our Catalogues</button>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2rem; color: var(--primary-color); margin-bottom: 1rem;">Why Choose Prime Tiles?</h2>
+                <p style="text-align: center; color: #666; max-width: 800px; margin: 0 auto;">With over three decades of experience expertise team, we've established ourselves as industry leaders in tile manufacturing, combining traditional craftsmanship with cutting-edge technology.</p>
+                
+                <div class="intro-grid">
+                    <div class="intro-card">
+                        <div class="icon">🏆</div>
+                        <h3>Premium Quality</h3>
+                        <p>Every tile undergoes rigorous quality checks to ensure perfection in finish and durability.</p>
+                    </div>
+                    <div class="intro-card">
+                        <div class="icon">🎨</div>
+                        <h3>Innovative Designs</h3>
+                        <p>Our design team creates unique patterns and textures that set trends in the industry.</p>
+                    </div>
+                    <div class="intro-card">
+                        <div class="icon">🌱</div>
+                        <h3>Eco-Friendly</h3>
+                        <p>Committed to sustainable manufacturing practices and environmentally conscious production.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 Prime Tiles Industries. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/primetiles.official/?hl=en"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="25">
+                    </a>
+                    <a href="https://www.facebook.com/PrimeTiles.Official/"><img src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg" alt="Facebook Logo" width="25"></a>
+                    <a href="https://www.youtube.com/@primetiles.Official"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="Youtube Logo" width="30"></a>
+                    <a href="https://www.linkedin.com/company/primetilesofficial/?originalSubdomain=np"><image src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt=" Linkedin Logo" width="25"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <div class="about-content">
+            <div class="about-header">
+                <h1>About Prime Tiles</h1>
+                <p>Nepal's No.1 tile manufacturing company</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-box">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2022, Prime Tiles Industries began as a company with a vision to revolutionize the tile manufacturing industry. What started in a modest facility has grown into one of the region's most trusted tile manufacturers.</p>
+                    <p>Today, we operate state-of-the-art manufacturing facilities equipped with the latest technology, producing millions of square feet of tiles annually while maintaining our commitment to quality and craftsmanship.</p>
+                </div>
+
+                <div class="about-box">
+                    <h2>Our Mission</h2>
+                    <p>To deliver exceptional quality tiles that inspire beautiful spaces while maintaining sustainable and ethical manufacturing practices. We strive to exceed customer expectations through innovation, reliability, and outstanding service.</p>
+                </div>
+
+                <div class="about-box">
+                    <h2>Our Vision</h2>
+                    <p>To be the global leader in tile manufacturing, recognized for our commitment to quality, innovation, and sustainability. We envision a future where Prime tiles enhance spaces worldwide, bringing beauty and durability to every project.</p>
+                </div>
+
+                <div class="about-box">
+                    <h2>Core Values</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0;">✓ <strong>Quality:</strong> Never compromise on excellence</li>
+                        <li style="padding: 0.5rem 0;">✓ <strong>Innovation:</strong> Continuously evolve and improve</li>
+                        <li style="padding: 0.5rem 0;">✓ <strong>Integrity:</strong> Honest and transparent in all dealings</li>
+                        <li style="padding: 0.5rem 0;">✓ <strong>Sustainability:</strong> Protect our planet for future generations</li>
+                        <li style="padding: 0.5rem 0;">✓ <strong>Customer Focus:</strong> Your satisfaction is our priority</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 2rem;">Our Journey</h2>
+                <div class="timeline-item">
+                    <h3>2023 - The Beginning</h3>
+                    <p>Prime Tiles was founded with a team of expertise from tile industries in order to make revolution.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2024 - Dealers Networking</h3>
+                    <p>We established our dealer networking all over the country.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2024 - ISO ceritified </h3>
+                    <p>Received ISO certification.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2024 - Wall and Floor Tiles</h3>
+                    <p>Became first company to manufacture both wall and floor tiles in Nepal.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2025 - Today</h3>
+                    <p>Leading the industry with cutting-edge designs and sustainable practices.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Prime Tiles Industries. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/primetiles.official/?hl=en"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="25">
+                    </a>
+                    <a href="https://www.facebook.com/PrimeTiles.Official/"><img src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg" alt="Facebook Logo" width="25"></a>
+                    <a href="https://www.youtube.com/@primetiles.Official"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="Youtube Logo" width="30"></a>
+                    <a href="https://www.linkedin.com/company/primetilesofficial/?originalSubdomain=np"><image src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt=" Linkedin Logo" width="25"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Products/Catalogues Page -->
+    <div id="products" class="page">
+        <div class="catalogues-section">
+            <div class="catalogues-header">
+                <h1>Product Catalogues</h1>
+                <p>Explore our extensive collection of premium tiles</p>
+            </div>
+
+            <div class="catalogues-grid" id="cataloguesGrid">
+                <!-- Catalogue cards will be dynamically generated here -->
+            </div>
+        </div>
+
+        <!-- PDF Viewer Modal -->
+        <div class="pdf-modal" id="pdfModal">
+            <div class="pdf-modal-content">
+                <div class="pdf-modal-header">
+                    <h3 id="modalTitle">Catalogue Viewer</h3>
+                    <button class="close-modal" onclick="closePDFModal()">&times;</button>
+                </div>
+                <div class="pdf-viewer">
+                    <div style="text-align: center;">
+                        <p style="font-size: 1.2rem; color: #666; margin-bottom: 1rem;">PDF Preview</p>
+                        <p style="color: #999;">In production, this would display your PDF using PDF.js or an embedded viewer.</p>
+                        <p style="color: #999; margin-top: 1rem;">You can integrate:</p>
+                        <ul style="list-style: none; color: #666; margin-top: 1rem;">
+                            <li>• PDF.js for full control</li>
+                            <li>• Google Drive embed</li>
+                            <li>• iframe with PDF URL</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 TileCraft Industries. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/primetiles.official/?hl=en"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="25">
+                    </a>
+                    <a href="https://www.facebook.com/PrimeTiles.Official/"><img src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg" alt="Facebook Logo" width="25"></a>
+                    <a href="https://www.youtube.com/@primetiles.Official"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="Youtube Logo" width="30"></a>
+                    <a href="https://www.linkedin.com/company/primetilesofficial/?originalSubdomain=np"><image src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt=" Linkedin Logo" width="25"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <div class="contact-section">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <h1>Get In Touch</h1>
+                    <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <h2>Send Message</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                        <div class="success-message" id="successMessage">
+                            Thank you for your message! We'll get back to you soon.
+                        </div>
+                    </div>
+
+                    <div class="contact-info">
+                        <h2>Contact Information</h2>
+                        <div class="info-item">
+                            <span class="icon">📍</span>
+                            <div>
+                                <strong>Address</strong><br>
+                                
+                                Corporate office: Level 4 Saket Complex, Tripureshwor, Kathmandu, Nepal<br>
+                                Factory : Sakhuwa Dhamaura, Brindavan Muncipality-6, Rautahat, Nepal<br>
+                            
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">📞</span>
+                            <div>
+                                <strong>Phone</strong><br>
+                                Tel:+977-1-5978860/61/62<br>
+                                Toll Free No: 1810500006
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">✉️</span>
+                            <div>
+                                <strong>Email</strong><br>
+                                info@primeceramics.com.np<br>
+                                sales@primeceramics.com.np
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">🕐</span>
+                            <div>
+                                <strong>Business Hours</strong><br>
+                                Sunday - Friday: 10:00 AM - 6:00 PM<br>
+                            </div>
+                        </div>
+
+                        <div class="map-container">
+                            <!-- Google Maps Embed would go here -->
+                            <div style="text-align: center;">
+                                <p>🗺️</p>
+                                <p>Google Maps Integration</p>
+                                <p style="font-size: 0.9rem; color: #999; margin-top: 0.5rem;"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3357.957193652618!2d85.30989667525331!3d27.693967276190175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1852a3a9a957%3A0x85d1a766e6b64a18!2sSaket%20Complex!5e1!3m2!1sen!2snp!4v1758000781983!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 TileCraft Industries. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/primetiles.official/?hl=en"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="25">
+                    </a>
+                    <a href="https://www.facebook.com/PrimeTiles.Official/"><img src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg" alt="Facebook Logo" width="25"></a>
+                    <a href="https://www.youtube.com/@primetiles.Official"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="Youtube Logo" width="30"></a>
+                    <a href="https://www.linkedin.com/company/primetilesofficial/?originalSubdomain=np"><image src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt=" Linkedin Logo" width="25"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Sample catalogue data - Replace with your actual catalogue information
+        const catalogues = [
+            {
+                id: 1,
+                title: "Wall Tiles - 300X450MM",
+                description: "Explore our finest ceramic tiles featuring modern designs and superior durability",
+                pdfUrl: "https://drive.google.com/file/d/17xElB3HdOICuj1aaTxl8Zy1chUlmEsJt/view?usp=drive_link",
+                thumbnail: "🏛️",
+                color: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+            },
+            {
+                id: 2,
+                title: "300x600",
+                description: "High-end porcelain tiles perfect for both residential and commercial spaces",
+                pdfUrl: "https://drive.google.com/file/d/1tkE5YvEio4t5czhOQPoXE35BVquB3X8h/view?usp=drive_link",
+                thumbnail: "💎",
+                color: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+            },
+            {
+                id: 3,
+                title: "Spirit of Nepal",
+                description: "Tiles inspired by natural stone patterns with enhanced durability",
+                pdfUrl: "https://drive.google.com/file/d/1ytUMUoo0SwiAhDNxEH3xS-kZh01DAf9u/view?usp=drive_link",
+                thumbnail: "🪨",
+                color: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+            },
+            {
+                id: 4,
+                title: "60x60",
+                description: "Creative mosaic patterns for accent walls and decorative spaces",
+                pdfUrl: "https://drive.google.com/file/d/1xdPdJ6ecnKq7df8yDHEf1G7D0EhgUJPc/view?usp=drive_link",
+                thumbnail: "🎨",
+                color: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+             }
+            // ,
+            // {
+            //     id: 5,
+            //     title: "Elegant Tiles",
+            //     description: "Weather-resistant tiles designed for patios, pools, and outdoor areas",
+            //     pdfUrl: "path/to/outdoor-catalogue.pdf",
+            //     thumbnail: "🌿",
+            //     color: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)"
+            // }
+        ];
+
+        // Navigation functionality
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page');
+        const hamburger = document.getElementById('hamburger');
+        const navLinksContainer = document.getElementById('navLinks');
+
+        function navigateToPage(pageId) {
+            // Hide all pages
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+            
+            // Update active nav link
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === pageId) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Close mobile menu if open
+            navLinksContainer.classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Add click event to nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.getAttribute('data-page');
+                navigateToPage(pageId);
+            });
+        });
+
+        // Hamburger menu toggle
+        hamburger.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('active');
+        });
+
+        // Generate catalogue cards
+        function generateCatalogues() {
+            const cataloguesGrid = document.getElementById('cataloguesGrid');
+            
+            catalogues.forEach(catalogue => {
+                const card = document.createElement('div');
+                card.className = 'catalogue-card';
+                card.innerHTML = `
+                    <div class="catalogue-thumbnail" style="background: ${catalogue.color};">
+                        <span style="z-index: 1;">${catalogue.thumbnail}</span>
+                    </div>
+                    <div class="catalogue-info">
+                        <h3 class="catalogue-title">${catalogue.title}</h3>
+                        <p class="catalogue-description">${catalogue.description}</p>
+                        <div class="catalogue-actions">
+                            <button class="btn-view" onclick="viewPDF('${catalogue.title}', '${catalogue.pdfUrl}')">
+                                View Catalogue
+                            </button>
+                            <button class="btn-download" onclick="downloadPDF('${catalogue.pdfUrl}', '${catalogue.title}')">
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                `;
+                cataloguesGrid.appendChild(card);
+            });
+        }
+
+        // PDF Viewer functions
+        function viewPDF(title, pdfUrl) {
+            const modal = document.getElementById('pdfModal');
+            const modalTitle = document.getElementById('modalTitle');
+            modalTitle.textContent = title;
+            modal.classList.add('active');
+            
+            // In production, you would load the PDF here using PDF.js or iframe
+            console.log('Loading PDF:', pdfUrl);
+        }
+
+        function closePDFModal() {
+            const modal = document.getElementById('pdfModal');
+            modal.classList.remove('active');
+        }
+
+        function downloadPDF(pdfUrl, title) {
+            // In production, this would trigger actual PDF download
+            console.log('Downloading:', title);
+            // Create a temporary link to download
+            const link = document.createElement('a');
+            link.href = pdfUrl;
+            link.download = title + '.pdf';
+            link.click();
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('pdfModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closePDFModal();
+            }
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            
+            // Reset form
+            e.target.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+            
+            // In production, you would send the form data to your server here
+            console.log('Form submitted');
+        });
+
+        // Smooth scroll behavior for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            
+            if (scrollTop > 50) {
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // Initialize catalogues on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            generateCatalogues();
+        });
+
+        // Add loading states for better UX
+        function addLoadingState(button) {
+            const originalText = button.innerHTML;
+            button.innerHTML = '<span class="loading"></span> Loading...';
+            button.disabled = true;
+            
+            // Simulate loading time
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 1000);
+        }
+
+        // Enhanced form validation
+        const inputs = document.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => {
+                if (input.value.trim() === '' && input.hasAttribute('required')) {
+                    input.style.borderColor = '#e74c3c';
+                } else {
+                    input.style.borderColor = '';
+                }
+            });
+            
+            input.addEventListener('focus', () => {
+                input.style.borderColor = '';
+            });
+        });
+
+        // Add animation on scroll for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.intro-card, .about-box, .catalogue-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        console.log('Prime Tiles Website Initialized Successfully!');
+    </script>
+
+    <!-- Button to Open Catalogue -->
+<button onclick="viewPDF('Product Catalogue', 'catalogue.pdf')">View Catalogue</button>
+
+<!-- Modal -->
+<div class="pdf-modal" id="pdfModal">
+  <div class="pdf-modal-content">
+    <div class="pdf-modal-header">
+      <h3 id="modalTitle">Catalogue Viewer</h3>
+      <button class="close-modal" onclick="closePDFModal()">&times;</button>
+    </div>
+
+    <!-- PDF Viewer -->
+    <div class="pdf-viewer">
+      <iframe id="pdfFrame" src="" width="100%" height="600px" style="border:none;"></iframe>
+    </div>
+
+    <!-- Download button -->
+    <div style="margin-top:10px; text-align:right;">
+      <button onclick="downloadPDF(currentPDFUrl, currentPDFTitle)">Download PDF</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentPDFUrl = '';
+  let currentPDFTitle = '';
+
+  function viewPDF(title, pdfUrl) {
+    const modal = document.getElementById('pdfModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const pdfFrame = document.getElementById('pdfFrame');
+
+    modalTitle.textContent = title;
+    pdfFrame.src = pdfUrl;
+
+    currentPDFUrl = pdfUrl;
+    currentPDFTitle = title;
+
+    modal.classList.add('active');
+  }
+
+  function closePDFModal() {
+    const modal = document.getElementById('pdfModal');
+    const pdfFrame = document.getElementById('pdfFrame');
+    pdfFrame.src = ''; // clear PDF when closing
+    modal.classList.remove('active');
+  }
+
+  function downloadPDF(pdfUrl, title) {
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = title + '.pdf';
+    link.click();
+  }
+
+  // Close modal when clicking outside content
+  document.getElementById('pdfModal').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) {
+      closePDFModal();
+    }
+  });
+</script>
+
+<style>
+  .pdf-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  .pdf-modal.active { display: flex; }
+  .pdf-modal-content {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 900px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .pdf-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
+
+
+</body>
+</html>
