@@ -718,7 +718,7 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="/" class="logo"><image src="/Image/prime-logo.jpg" alt="Prime Tiles Logo" width="150"></a>
+            <a href="/" class="logo"><image src="/prime-logo.jpg" alt="Prime Tiles Logo" width="150"></a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#" data-page="home" class="nav-link active">Home</a></li>
                 <li><a href="#" data-page="about" class="nav-link">About Us</a></li>
@@ -1014,7 +1014,7 @@
                 title: "Wall Tiles - 300X450MM",
                 description: "Explore our finest ceramic wall tiles featuring modern designs and superior durability",
                 pdfUrl: "https://drive.google.com/file/d/17xElB3HdOICuj1aaTxl8Zy1chUlmEsJt/view?usp=drive_link",
-                thumbnail: "",
+                thumbnail: "/J-30x45.png",
                 color: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
             },
             {
@@ -1022,7 +1022,7 @@
                 title: "300x600MM Tiles",
                 description: "High-end ceramic wall tiles with outstanding finish",
                 pdfUrl: "https://drive.google.com/file/d/1tkE5YvEio4t5czhOQPoXE35BVquB3X8h/view?usp=drive_link",
-                thumbnail: "",
+                thumbnail: "/J-30x60.png",
                 color: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
             },
             {
@@ -1030,7 +1030,7 @@
                 title: "Spirit of Nepal",
                 description: "Tiles inspired fom Nepali Culture",
                 pdfUrl: "https://drive.google.com/file/d/1ytUMUoo0SwiAhDNxEH3xS-kZh01DAf9u/view?usp=drive_link",
-                thumbnail: "",
+                thumbnail: "/J-spirit.png",
                 color: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
             },
             {
@@ -1038,7 +1038,7 @@
                 title: "600X600MM Tiles",
                 description: "Strong build vitrified tiles with elegant look",
                 pdfUrl: "https://drive.google.com/file/d/1xdPdJ6ecnKq7df8yDHEf1G7D0EhgUJPc/view?usp=drive_link",
-                thumbnail: "",
+                thumbnail: "/J-60x60.png",
                 color: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
              }
             // ,
@@ -1106,7 +1106,7 @@
                 card.className = 'catalogue-card';
                 card.innerHTML = `
                     <div class="catalogue-thumbnail" style="background: ${catalogue.color};">
-                        <span style="z-index: 1;">${catalogue.thumbnail}</span>
+                        <img src="${catalogue.thumbnail}" alt="${catalogue.title}" style="width: 100%; height: 100%; object-fit: cover; z-index: 1;">
                     </div>
                     <div class="catalogue-info">
                         <h3 class="catalogue-title">${catalogue.title}</h3>
